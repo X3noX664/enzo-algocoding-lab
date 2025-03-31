@@ -1,4 +1,4 @@
- import math
+import math
 choix = input("""1 somme de vecteurs
 2 coordonnées d'un vecteur
 3 norme d'un vecteur
@@ -45,4 +45,13 @@ elif choix == "3":
      print(f"""u = √(xb-xa)²+(yb-ya)²)
      = √({x2}-{x1})²+({y2}-{y1})²)
      = {u}""")
+  elif choix2 == "2":
+   x = int(input("x = ?")
+   y = int(input("y = ?")
+   r = math.sqrt(x**2 + y**2)
+   print(f"""u = √x²+y²
+   u = √{x}+{y}²
+   u = √{x**2}+{y**2}
+   u = √{x**2 + y**2}
+   u = {r}""")    
                   
