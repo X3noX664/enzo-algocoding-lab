@@ -23,37 +23,41 @@ choix = input("""1 somme de vecteurs
 Quel est ton choix ? """)
 
 if choix == "1":
-    xa, ya = saisir_point("A")
-    xb, yb = saisir_point("B")
-    x = xa + xb
-    y = ya + yb
+    xua, yua = saisir_point("UA")
+    xub, yub = saisir_point("UB")
+    xva, yva = saisir_point("VA")
+    xvb, yvb = saisir_point("VB")
+    xu = xub - xua
+    yu = yub - yua
+    xv = xvb - xva
+    yv = yvb - yva
     arrondir_à = arrondi()
-    print(f"""u + v = (x1 + x2 ; y1 + y2)
-u + v = ({round(x, arrondir_à)} ; {round(y, arrondir_à)})""")
+    print(f"""u + v = (xu + xv ; yu + yv)
+u + v = ({round(xu + xv, arrondir_à)} ; {round(yu + yv, arrondir_à)})""")
 
 elif choix == "2":
-    x1 = int(input("Coordonnée xa : "))
-    x2 = int(input("Coordonnée xb : "))
-    y1 = int(input("Coordonnée ya : "))
-    y2 = int(input("Coordonnée yb : "))
-    x = x2 - x1
-    y = y2 - y1
-    print(f"AB = ({x} ; {y})")
+    xa, ya = saisir_point("A")
+    xb, yb = saisir_point("B")
+    x = xb - xa
+    y = yb - ya
+    arrondir_à = arrondi()
+    print(f"AB = ({round(x, arrondir_à)} ; {round(y, arrondir_à)})")
 
 elif choix == "3":
     choix2 = input("Utilises-tu les coordonnées de deux points (1) ou d'un vecteur (2) ? ")
     if choix2 == "1":
-        x1 = int(input("Coordonnée xa : "))
-        x2 = int(input("Coordonnée xb : "))
-        y1 = int(input("Coordonnée ya : "))
-        y2 = int(input("Coordonnée yb : "))
-        x = x2 - x1
-        y = y2 - y1
+        xa, ya = saisir_point("A")
+        xb, yb = saisir_point("B")
+        x = xb - xa
+        y = yb - ya
         u = math.sqrt(x**2 + y**2)
-        print(f"AB = ({x} ; {y})")
-        print(f"||AB|| = √({x}² + {y}²) = √{x**2 + y**2} = {u}")
+        arrondir_à = arrondi()
+        print(f"AB = ({round(x, arrondir_à)} ; {round(y, arrondir_à)})")
+        print(f"||AB|| = √({round(x, arrondir_à)}² + {round(y, arrondir_à)}²) = √{round(x**2 + y**2, arrondir_à)} = {round(u, arrondir_à)}")
+        
     elif choix2 == "2":
         x = int(input("x = ? "))
         y = int(input("y = ? "))
         r = math.sqrt(x**2 + y**2)
-        print(f"u = √({x**2} + {y**2}) = √{x**2 + y**2} = {r}")
+        arrondir_à = arrondi()
+        print(f"u = √({round(x**2, arrondir_à)} + {round(y**2, arrondir_à)}) = √{round(x**2 + y**2, arrondir_à)} = {round(r, arrondir_à)}")
