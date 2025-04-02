@@ -61,3 +61,19 @@ elif choix == "3":
         r = math.sqrt(x**2 + y**2)
         arrondir_à = arrondi()
         print(f"u = √({round(x**2, arrondir_à)} + {round(y**2, arrondir_à)}) = √{round(x**2 + y**2, arrondir_à)} = {round(r, arrondir_à)}")
+elif choix == "4":
+    choix2 = input("utilise tu les coordonnées de vecteurs où l'angle (1) ou les normes (2)")
+    if choix2 == "1":
+        xa, ya = saisir_point("A")
+        xb, yb = saisir_point("B")
+        xc, yc = saisir_point("C")
+        xd, yd = saisir_point("D")
+        angle_deg = float(input("quelle est l'angle entre u et v : ")) 
+        angle_rad = math.radians(angle_deg)
+        norme_AB = math.sqrt((xb-xa)**2 + (yb-ya)**2)
+        norme_CD = math.sqrt((xd-xc)**2 + (yd-yc)**2)
+        produit_scalaire = norme_AB * norme_CD * math.cos(angle_rad)
+        arrondir_à = arrondi()
+        print(round(produit_scalaire, arrondir_à))
+    elif choix2 == "2":
+        print("test")
