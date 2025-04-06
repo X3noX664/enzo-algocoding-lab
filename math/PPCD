@@ -1,0 +1,26 @@
+import math
+from fractions import Fraction
+d1s = 0
+n1s = 0
+d2s = 0
+n2s = 0
+n1 = int(input("numérateur de la première fraction :"))
+d1 = int(input("dénominateur de la première fraction :"))
+n2 = int(input("numérateur de la deuxième fraction :"))
+d2 = int(input("dénominateur de la deuxième fraction :"))
+f1 = Fraction(n1, d1)
+f2 = Fraction(n2, d2)
+print("avant mise au même dénominateur", f1, f2)
+dc = math.lcm(d1, d2)
+N1 = n1 *(dc // d1) 
+N2 = n2 *(dc // d2)
+f1s = Fraction(N1, dc)
+f2s = Fraction(N2, dc)
+print(f"""après mise au même dénominateur :
+{N1}/{dc}
+{N2}/{dc}""")
+
+
+
+
+
