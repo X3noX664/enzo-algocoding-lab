@@ -1,0 +1,32 @@
+import matplotlib.pyplot as plt
+push_up_timer = []
+pull_up_timer = []
+push_up_max = []
+pull_up_max = []
+two_km_run = []
+gain_front = []
+gain_latt = []
+date_push_up_timer = []
+date_pull_up_timer = []
+date_push_up_max = []
+date_pull_up_max = []
+date_two_km_run = []
+date_gain_front = []
+date_gain_latt = []
+
+import matplotlib.pyplot as plt
+
+# Courbes
+plt.plot(date_push_up_timer, push_up_timer)
+plt.plot(date_pull_up_timer, pull_up_timer)
+plt.plot(date_push_up_max, push_up_max)
+plt.plot(date_pull_up_max, pull_up_max)
+plt.plot(date_two_km_run, two_km_run)
+plt.plot(date_gain_front, gain_front)
+plt.plot(date_gain_latt, gain_latt)
+
+plt.title("Évolution des performances physiques")
+plt.xlabel("Date")
+plt.ylabel("Nombre / Temps (s)")
+
+plt.show()
