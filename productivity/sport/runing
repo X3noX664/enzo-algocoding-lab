@@ -1,0 +1,27 @@
+import matplotlib.pyplot as plt
+distance_km = []
+temps_min =[]
+stop = 0
+VMA = []
+n = 0
+while True:
+        val_d = input("Quelle distance en km ? (ou tape 'stop') : ")
+        if val_d.lower() == "stop":
+                print("Vous avez fini d'entrer les données.")
+                break
+        val_d = float(val_d)
+        distance_km.append(val_d)
+        val_t = float(input("Quel temps en minutes ? : ") ) / 60
+        temps_min.append(val_t)
+
+for d, t in zip(distance_km, temps_min):
+        VMA.append(d / ( t * 0.92**t))
+        n += 1
+        print(f"ta VMA pour le {n}ème running est de {VMA[-1]:.2f}")
+plt.plot(range(1, n+1), VMA, marker='o')
+plt.title("graphique de la VMA")
+plt.xlabel("numéro de session")
+plt.ylabel("VMA")
+plt.show()
+
+
